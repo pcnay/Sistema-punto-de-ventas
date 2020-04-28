@@ -137,7 +137,6 @@ namespace ViewModels
             {
               case "insert":
                 TClientes.Value(c => c.Nid,_textBoxCliente[0].Text);
-                // Linea para probar los cambios.
                 break;
 
               default:
