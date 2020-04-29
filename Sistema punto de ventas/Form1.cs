@@ -45,9 +45,10 @@ namespace Sistema_punto_de_ventas
             labelCliente.Add(labelCliente_Direccion);
 
             object[] objectos = { 
-              PictureBoxCliente
-              
+              PictureBoxCliente,
+              checkBoxCliente_Credito              
               };
+
             clientes = new ClientesVM(objectos, textBoxCliente, labelCliente);
             tabControlPrincipal.SelectedIndex = 1;
 
