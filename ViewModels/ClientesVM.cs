@@ -1,4 +1,5 @@
 ﻿using LinqToDB;
+using Models;
 using Models.Conexion;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,8 @@ namespace ViewModels
 		private PictureBox _imagePictureBox;
 		private CheckBox _checkBoxCredito;
 		private Bitmap _imagBitmap;
+		private static DataGridView _dataGridView1;
+		private int _reg_por_pagina = 10, _num_pagina = 1;
 
 		public ClientesVM(object[] objectos, List<TextBox> textBoxCliente, List<Label> labelCliente)
 		{
@@ -28,7 +31,9 @@ namespace ViewModels
 			_imagePictureBox = (PictureBox)objectos[0];
 			_checkBoxCredito = (CheckBox)objectos[1];
 			_imagBitmap = (Bitmap)objectos[2];
+			_dataGridView1 = (DataGridView)objectos[3];
 			evento = new TextBoxEvent();
+			restablecer();
 		}
 		public void guardarCliente()
 		{
@@ -176,9 +181,40 @@ namespace ViewModels
 			}
 		}
 
+		// Se utiliza de forma Asincronica, ya va terminando las etapas para ir avanzando
+		/* 
+		 Funcion normal
+			public void SearchClientes(string campo)
+			{
+				// Filtrando a los clientes.
+				List<TClientes> query;
+				int inicio = (_num_pagina - 1) * _reg_por_pagina;
+				if(campo.Equals(""))
+				{
+					query = TClientes.ToList();
+				}
+			}
+
+		 */
+		public async Task SearchClientesAsync(string campo)
+		{
+			// Filtrando a los clientes.
+			List<TClientes> query;
+			int inicio = (_num_pagina - 1) * _reg_por_pagina;
+			if(campo.Equals(""))
+			{
+				query = await TClientes.ToListAsync();
+			}
+			else
+			{
+				query = await TClientes.Where(c => c.Nid.StartsWith(campo) || c.Nombre.StartsWith(campo) || c.Apellido.StartsWith(campo)).ToListAsync();
+			}
+			_dataGridView1.DataSource = query.Skip(inicio).Take(_reg_por_pagina).ToList();
+		}
 		public void restablecer()
 		{
 			_accion = "insert";
+			_num_pagina = 1;
 			_textBoxCliente[0].Text = "";
 			_textBoxCliente[1].Text = "";
 			_textBoxCliente[2].Text = "";
@@ -199,9 +235,8 @@ namespace ViewModels
 			_labelCliente[4].ForeColor = Color.LightSlateGray;
 			_labelCliente[5].Text = "Direccion";
 			_labelCliente[5].ForeColor = Color.LightSlateGray;
-
-
-
+			_ = SearchClientesAsync("");
+			
 		}
 	}
 }

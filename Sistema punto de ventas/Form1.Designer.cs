@@ -35,6 +35,7 @@
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.tabControl2 = new System.Windows.Forms.TabControl();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.checkBoxCliente_Credito = new System.Windows.Forms.CheckBox();
 			this.buttonCliente_Cancelar = new System.Windows.Forms.Button();
 			this.buttonCliente_Agregar = new System.Windows.Forms.Button();
 			this.textBoxCliente_Direccion = new System.Windows.Forms.TextBox();
@@ -61,10 +62,10 @@
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.buttonCliente = new System.Windows.Forms.Button();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
-			this.checkBoxCliente_Credito = new System.Windows.Forms.CheckBox();
+			this.dataGridView_Clientes = new System.Windows.Forms.DataGridView();
 			this.tabControlPrincipal.SuspendLayout();
 			this.tabPage2.SuspendLayout();
+			this.groupBox5.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.tabControl2.SuspendLayout();
 			this.tabPage3.SuspendLayout();
@@ -73,6 +74,7 @@
 			this.groupBox2.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clientes)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tabControlPrincipal
@@ -97,7 +99,7 @@
 			this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-			this.tabPage1.Size = new System.Drawing.Size(1053, 562);
+			this.tabPage1.Size = new System.Drawing.Size(1175, 656);
 			this.tabPage1.TabIndex = 1;
 			this.tabPage1.Text = "Ventas";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -122,6 +124,7 @@
 			this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox5.Controls.Add(this.dataGridView_Clientes);
 			this.groupBox5.Location = new System.Drawing.Point(313, 60);
 			this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
 			this.groupBox5.Name = "groupBox5";
@@ -181,6 +184,16 @@
 			this.tabPage3.TabIndex = 0;
 			this.tabPage3.Text = "Registros de cliente";
 			this.tabPage3.UseVisualStyleBackColor = true;
+			// 
+			// checkBoxCliente_Credito
+			// 
+			this.checkBoxCliente_Credito.AutoSize = true;
+			this.checkBoxCliente_Credito.Location = new System.Drawing.Point(7, 283);
+			this.checkBoxCliente_Credito.Name = "checkBoxCliente_Credito";
+			this.checkBoxCliente_Credito.Size = new System.Drawing.Size(59, 17);
+			this.checkBoxCliente_Credito.TabIndex = 16;
+			this.checkBoxCliente_Credito.Text = "Credito";
+			this.checkBoxCliente_Credito.UseVisualStyleBackColor = true;
 			// 
 			// buttonCliente_Cancelar
 			// 
@@ -492,25 +505,20 @@
 			this.buttonCliente.UseVisualStyleBackColor = false;
 			this.buttonCliente.Click += new System.EventHandler(this.ButtonCliente_Click);
 			// 
-			// checkBox1
+			// dataGridView_Clientes
 			// 
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Location = new System.Drawing.Point(0, 0);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(80, 17);
-			this.checkBox1.TabIndex = 4;
-			this.checkBox1.Text = "checkBox1";
-			this.checkBox1.UseVisualStyleBackColor = true;
-			// 
-			// checkBoxCliente_Credito
-			// 
-			this.checkBoxCliente_Credito.AutoSize = true;
-			this.checkBoxCliente_Credito.Location = new System.Drawing.Point(7, 283);
-			this.checkBoxCliente_Credito.Name = "checkBoxCliente_Credito";
-			this.checkBoxCliente_Credito.Size = new System.Drawing.Size(59, 17);
-			this.checkBoxCliente_Credito.TabIndex = 16;
-			this.checkBoxCliente_Credito.Text = "Credito";
-			this.checkBoxCliente_Credito.UseVisualStyleBackColor = true;
+			this.dataGridView_Clientes.AllowUserToAddRows = false;
+			this.dataGridView_Clientes.AllowUserToDeleteRows = false;
+			this.dataGridView_Clientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.dataGridView_Clientes.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.dataGridView_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView_Clientes.GridColor = System.Drawing.SystemColors.Control;
+			this.dataGridView_Clientes.Location = new System.Drawing.Point(5, 11);
+			this.dataGridView_Clientes.Name = "dataGridView_Clientes";
+			this.dataGridView_Clientes.ReadOnly = true;
+			this.dataGridView_Clientes.Size = new System.Drawing.Size(835, 322);
+			this.dataGridView_Clientes.TabIndex = 0;
 			// 
 			// Form1
 			// 
@@ -519,7 +527,6 @@
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.BackColor = System.Drawing.SystemColors.ControlLight;
 			this.ClientSize = new System.Drawing.Size(1187, 633);
-			this.Controls.Add(this.checkBox1);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.buttonCliente);
 			this.Controls.Add(this.tabControlPrincipal);
@@ -531,6 +538,7 @@
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.tabControlPrincipal.ResumeLayout(false);
 			this.tabPage2.ResumeLayout(false);
+			this.groupBox5.ResumeLayout(false);
 			this.groupBox3.ResumeLayout(false);
 			this.tabControl2.ResumeLayout(false);
 			this.tabPage3.ResumeLayout(false);
@@ -542,8 +550,8 @@
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clientes)).EndInit();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
         }
 
@@ -582,7 +590,7 @@
         private System.Windows.Forms.Button buttonCliente_Agregar;
         private System.Windows.Forms.TextBox textBoxCliente_Nid;
 		private System.Windows.Forms.CheckBox checkBoxCliente_Credito;
-		private System.Windows.Forms.CheckBox checkBox1;
+		private System.Windows.Forms.DataGridView dataGridView_Clientes;
 	}
 }
 
