@@ -19,6 +19,7 @@ namespace ViewModels
 		private string _accion = "insert";
 		private PictureBox _imagePictureBox;
 		private CheckBox _checkBoxCredito;
+		private Bitmap _imagBitmap;
 
 		public ClientesVM(object[] objectos, List<TextBox> textBoxCliente, List<Label> labelCliente)
 		{
@@ -26,6 +27,7 @@ namespace ViewModels
 			_labelCliente = labelCliente;
 			_imagePictureBox = (PictureBox)objectos[0];
 			_checkBoxCredito = (CheckBox)objectos[1];
+			_imagBitmap = (Bitmap)objectos[2];
 			evento = new TextBoxEvent();
 		}
 		public void guardarCliente()
@@ -159,16 +161,47 @@ namespace ViewModels
 										.Value(u => u.FechaDeuda, "--/--/--")
 										.Value(u => u.FechaLimite, "--/--/--")
 										.Value(u => u.Ticket, "0000000000")
-										.Value(u => u.IdCliente, cliente.IdCliente)
+										.Value(u => u.IdCliente, cliente.ID)
 										.Insert();
 						break;
 
 				}
+				CommitTransaction(); // Para grabar los datos a las Tablas.
+				restablecer();
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-				throw;
+				RollbackTransaction();
+				MessageBox.Show(ex.Message);
 			}
+		}
+
+		public void restablecer()
+		{
+			_accion = "insert";
+			_textBoxCliente[0].Text = "";
+			_textBoxCliente[1].Text = "";
+			_textBoxCliente[2].Text = "";
+			_textBoxCliente[3].Text = "";
+			_textBoxCliente[4].Text = "";
+			_textBoxCliente[5].Text = "";
+			_checkBoxCredito.Checked = false;
+			_checkBoxCredito.ForeColor = Color.LightSlateGray;
+			_labelCliente[0].Text = "Nid";
+			_labelCliente[0].ForeColor = Color.LightSlateGray;
+			_labelCliente[1].Text = "Nombre";
+			_labelCliente[1].ForeColor = Color.LightSlateGray;
+			_labelCliente[2].Text = "Apellido";
+			_labelCliente[2].ForeColor = Color.LightSlateGray;
+			_labelCliente[3].Text = "Email";
+			_labelCliente[3].ForeColor = Color.LightSlateGray;
+			_labelCliente[4].Text = "Telefono";
+			_labelCliente[4].ForeColor = Color.LightSlateGray;
+			_labelCliente[5].Text = "Direccion";
+			_labelCliente[5].ForeColor = Color.LightSlateGray;
+
+
+
 		}
 	}
 }

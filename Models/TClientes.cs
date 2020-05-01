@@ -10,7 +10,7 @@ namespace Models
     public class TClientes
     {
         [PrimaryKey, Identity]
-        public int IdCliente { set; get; }
+        public int ID { set; get; }
         public string Nid { set; get; }
         public string Nombre { set; get; }
         public string Apellido { set; get; }

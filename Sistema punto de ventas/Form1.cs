@@ -46,7 +46,8 @@ namespace Sistema_punto_de_ventas
 
             object[] objectos = { 
               PictureBoxCliente,
-              checkBoxCliente_Credito              
+              checkBoxCliente_Credito,
+              Properties.Resources.logo_google // Accede a las imagenes que se tienen en la carpeta de "Resources"
               };
 
             clientes = new ClientesVM(objectos, textBoxCliente, labelCliente);
