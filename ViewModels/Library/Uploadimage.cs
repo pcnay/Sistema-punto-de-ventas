@@ -53,6 +53,13 @@ namespace ViewModels.Library
           return (byte[])converter.ConvertTo(img, typeof(byte[]));
         }
 
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+          MemoryStream ms = new MemoryStream(byteArrayIn);
+          Image returnImage = Image.FromStream(ms);
+          return returnImage;
+        }
+
     }
 
 }

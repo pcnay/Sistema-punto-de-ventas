@@ -12,6 +12,7 @@ using ViewModels.Library;
 
 namespace ViewModels
 {
+	// Constructor de la clase.
 	public class ClientesVM : Conexion
 	{
 		private List<TextBox> _textBoxCliente;
@@ -22,6 +23,8 @@ namespace ViewModels
 		private CheckBox _checkBoxCredito;
 		private Bitmap _imagBitmap;
 		private static DataGridView _dataGridView1;
+		private NumericUpDown _numericUpDown;
+		private Paginador<TClientes> _paginadorClientes;
 		private int _reg_por_pagina = 10, _num_pagina = 1;
 
 
@@ -34,6 +37,7 @@ namespace ViewModels
 			_checkBoxCredito = (CheckBox)objectos[1];
 			_imagBitmap = (Bitmap)objectos[2];
 			_dataGridView1 = (DataGridView)objectos[3];
+			_numericUpDown = (NumericUpDown)objectos[4];
 			evento = new TextBoxEvent();
 			restablecer();
 		}
@@ -198,31 +202,43 @@ namespace ViewModels
 			}
 
 		 */
-		public async Task SearchClientesAsync(string campo)
+		//public async Task SearchClientesAsync(string campo)
+		public void SearchClientes(string campo)
 		{
 			// Filtrando a los clientes.
-			List<TClientes> query;
+			List<TClientes> query = new List<TClientes>();
 			int inicio = (_num_pagina - 1) * _reg_por_pagina;
 			if(campo.Equals(""))
 			{
-				query = await TClientes.ToListAsync();
+				// query = await TClientes.ToListAsync();
+				query = TClientes.ToList();
 			}
 			else
 			{
-				query = await TClientes.Where(c => c.Nid.StartsWith(campo) || c.Nombre.StartsWith(campo) || c.Apellido.StartsWith(campo)).ToListAsync();
+				//query = await TClientes.Where(c => c.Nid.StartsWith(campo) || c.Nombre.StartsWith(campo) || c.Apellido.StartsWith(campo)).ToListAsync();
+				query = TClientes.Where(c => c.Nid.StartsWith(campo) || c.Nombre.StartsWith(campo) || c.Apellido.StartsWith(campo)).ToList();
 			}
-			// En esta parte se asigna los datos al Grid de la pantalla en Captura de Clientes.
-			_dataGridView1.DataSource = query.Skip(inicio).Take(_reg_por_pagina).ToList();
-			// Ocultando algunas columnas.
-			_dataGridView1.Columns[0].Visible = false;
-			_dataGridView1.Columns[7].Visible = false;
-			_dataGridView1.Columns[9].Visible = false;
-			_dataGridView1.Columns[1].DefaultCellStyle.BackColor = Color.WhiteSmoke;
-			_dataGridView1.Columns[3].DefaultCellStyle.BackColor = Color.WhiteSmoke;
-			_dataGridView1.Columns[5].DefaultCellStyle.BackColor = Color.WhiteSmoke;
-			_dataGridView1.Columns[7].DefaultCellStyle.BackColor = Color.WhiteSmoke;
 
-		}
+			if (0 < query.Count)
+			{
+				// En esta parte se asigna los datos al Grid de la pantalla en Captura de Clientes.
+				_dataGridView1.DataSource = query.Skip(inicio).Take(_reg_por_pagina).ToList();
+				// Ocultando algunas columnas.
+				_dataGridView1.Columns[0].Visible = false;
+				_dataGridView1.Columns[7].Visible = false;
+				_dataGridView1.Columns[9].Visible = false;
+				_dataGridView1.Columns[1].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+				_dataGridView1.Columns[3].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+				_dataGridView1.Columns[5].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+				_dataGridView1.Columns[7].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+			}
+			else
+			{
+				_dataGridView1.DataSource = query;
+			}
+
+		} // public void SearchClientes(string campo)
+
 
 		// Asigna los valores a los campos de captura de Clientes.
 		private int _idCliente = 0;
@@ -241,8 +257,9 @@ namespace ViewModels
 			{
 				// Para obtener la imagen.
 				byte[] arrayImage = (byte[])_dataGridView1.CurrentRow.Cells[9].Value;
-				//_imagePictureBox.Image = Objects.uploadimage.byteArrayToImage(arrayImage);
-			}
+				_imagePictureBox.Image = Objects.uploadimage.byteArrayToImage(arrayImage);
+				
+				}
 			catch (Exception)
 			{
 				_imagePictureBox.Image = _imagBitmap;
@@ -252,6 +269,8 @@ namespace ViewModels
 			_checkBoxCredito.ForeColor = _checkBoxCredito.Checked ? Color.Green : Color.Red;
 		}
 
+
+		
 		public void restablecer()
 		{
 			_accion = "insert";
@@ -277,8 +296,63 @@ namespace ViewModels
 			_labelCliente[4].ForeColor = Color.LightSlateGray;
 			_labelCliente[5].Text = "Direccion";
 			_labelCliente[5].ForeColor = Color.LightSlateGray;
-			_ = SearchClientesAsync("");
-			
+			SearchClientes("");
+			listCliente = TClientes.ToList();
+			// Verifica si tiene registros la consulta realizada, se obtienen el número de registros desde ToList.			
+			if (0 < listCliente.Count)
+			{
+				_paginadorClientes = new Paginador<TClientes>(listCliente, _labelCliente[6], _reg_por_pagina);
+			}			
 		}
+
+		private List<TClientes> listCliente;
+		public void Paginador (string metodo)
+		{
+			switch (metodo)
+			{
+				case "Primero":
+					if (0 < listCliente.Count)
+					{
+						_num_pagina = _paginadorClientes.primero();
+					}					
+					break;
+				case "Anterior":
+					if (0 < listCliente.Count)
+					{
+						_num_pagina = _paginadorClientes.anterior();
+					}
+					break;
+				case "Siguiente":
+					if (0 < listCliente.Count)
+					{
+						_num_pagina = _paginadorClientes.siguiente();
+					}
+					break;
+				case "Ultimo":
+					if (0 < listCliente.Count)
+					{
+						_num_pagina = _paginadorClientes.ultimo();
+					}
+					break;
+
+			} // switch (metodo)
+
+			SearchClientes("");
+
+		} // public void Paginador (string metodo)
+
+		public void Registro_Paginas()
+		{
+			_num_pagina = 1;
+			_reg_por_pagina = (int)_numericUpDown.Value;
+
+			if (0 < listCliente.Count)
+			{
+				_paginadorClientes = new Paginador<TClientes>(listCliente, _labelCliente[6], _reg_por_pagina);
+				SearchClientes("");
+			}
+
+		}
+
 	}
 }

@@ -43,12 +43,15 @@ namespace Sistema_punto_de_ventas
             labelCliente.Add(labelCliente_Email);
             labelCliente.Add(labelCliente_Telefono);
             labelCliente.Add(labelCliente_Direccion);
+            labelCliente.Add(label_PaginasCliente);
+      
 
             object[] objectos = { 
               PictureBoxCliente,
               checkBoxCliente_Credito,
               Properties.Resources.logo_google, // Accede a las imagenes que se tienen en la carpeta de "Resources"
-              dataGridView_Clientes
+              dataGridView_Clientes,
+              numeric_PaginasCliente
               };
 
             clientes = new ClientesVM(objectos, textBoxCliente, labelCliente);
@@ -186,15 +189,39 @@ namespace Sistema_punto_de_ventas
               clientes.GetCliente();
             }
         }
+        private void buttonCliente_Pagina1_Click(object sender, EventArgs e)
+        {
+          clientes.Paginador("Primero");
+        }
+
+        private void buttonCliente_Pagina2_Click(object sender, EventArgs e)
+        {
+          clientes.Paginador("Anterior");
+        }
+
+        private void buttonCliente_Pagina3_Click(object sender, EventArgs e)
+        {
+          clientes.Paginador("Siguiente");
+        }
+
+        private void buttonCliente_Pagina4_Click(object sender, EventArgs e)
+        {
+          clientes.Paginador("Ultimo");
+        }
+
+
+        private void numeric_PaginasCliente_ValueChanged(object sender, EventArgs e)
+        {
+          clientes.Registro_Paginas();
+        }
 
     #endregion
 
-    
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
+    private void Form1_Load(object sender, EventArgs e)
+        {
+          
         }
-    
 
   }
 }

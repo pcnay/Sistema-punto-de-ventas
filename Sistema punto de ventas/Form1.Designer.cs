@@ -28,18 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tabControlPrincipal = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
+			this.label_PaginasCliente = new System.Windows.Forms.Label();
+			this.buttonCliente_Pagina2 = new System.Windows.Forms.Button();
+			this.buttonCliente_Pagina3 = new System.Windows.Forms.Button();
+			this.buttonCliente_Pagina4 = new System.Windows.Forms.Button();
+			this.button2 = new System.Windows.Forms.Button();
+			this.buttonCliente_Pagina1 = new System.Windows.Forms.Button();
+			this.numeric_PaginasCliente = new System.Windows.Forms.NumericUpDown();
+			this.label5 = new System.Windows.Forms.Label();
+			this.tabControl1 = new System.Windows.Forms.TabControl();
+			this.tabPage5 = new System.Windows.Forms.TabPage();
 			this.dataGridView_Clientes = new System.Windows.Forms.DataGridView();
+			this.tabPage6 = new System.Windows.Forms.TabPage();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.tabControl2 = new System.Windows.Forms.TabControl();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.checkBoxCliente_Credito = new System.Windows.Forms.CheckBox();
-			this.buttonCliente_Cancelar = new System.Windows.Forms.Button();
-			this.buttonCliente_Agregar = new System.Windows.Forms.Button();
 			this.textBoxCliente_Direccion = new System.Windows.Forms.TextBox();
 			this.labelCliente_Direccion = new System.Windows.Forms.Label();
 			this.textBoxCliente_Telefono = new System.Windows.Forms.TextBox();
@@ -56,6 +65,8 @@
 			this.PictureBoxCliente = new System.Windows.Forms.PictureBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
+			this.buttonCliente_Cancelar = new System.Windows.Forms.Button();
+			this.buttonCliente_Agregar = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.textBoxCliente_Buscar = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
@@ -67,6 +78,9 @@
 			this.tabControlPrincipal.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			this.groupBox5.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numeric_PaginasCliente)).BeginInit();
+			this.tabControl1.SuspendLayout();
+			this.tabPage5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clientes)).BeginInit();
 			this.groupBox3.SuspendLayout();
 			this.tabControl2.SuspendLayout();
@@ -125,7 +139,15 @@
 			this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.groupBox5.Controls.Add(this.dataGridView_Clientes);
+			this.groupBox5.Controls.Add(this.label_PaginasCliente);
+			this.groupBox5.Controls.Add(this.buttonCliente_Pagina2);
+			this.groupBox5.Controls.Add(this.buttonCliente_Pagina3);
+			this.groupBox5.Controls.Add(this.buttonCliente_Pagina4);
+			this.groupBox5.Controls.Add(this.button2);
+			this.groupBox5.Controls.Add(this.buttonCliente_Pagina1);
+			this.groupBox5.Controls.Add(this.numeric_PaginasCliente);
+			this.groupBox5.Controls.Add(this.label5);
+			this.groupBox5.Controls.Add(this.tabControl1);
 			this.groupBox5.Location = new System.Drawing.Point(313, 60);
 			this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
 			this.groupBox5.Name = "groupBox5";
@@ -134,6 +156,142 @@
 			this.groupBox5.TabIndex = 2;
 			this.groupBox5.TabStop = false;
 			// 
+			// label_PaginasCliente
+			// 
+			this.label_PaginasCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label_PaginasCliente.AutoSize = true;
+			this.label_PaginasCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label_PaginasCliente.ForeColor = System.Drawing.Color.LightSlateGray;
+			this.label_PaginasCliente.Location = new System.Drawing.Point(491, 347);
+			this.label_PaginasCliente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label_PaginasCliente.Name = "label_PaginasCliente";
+			this.label_PaginasCliente.Size = new System.Drawing.Size(58, 16);
+			this.label_PaginasCliente.TabIndex = 6;
+			this.label_PaginasCliente.Text = "Paginas";
+			// 
+			// buttonCliente_Pagina2
+			// 
+			this.buttonCliente_Pagina2.BackColor = System.Drawing.SystemColors.GrayText;
+			this.buttonCliente_Pagina2.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.buttonCliente_Pagina2.FlatAppearance.BorderSize = 0;
+			this.buttonCliente_Pagina2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonCliente_Pagina2.Image = global::Sistema_punto_de_ventas.Properties.Resources.Left1;
+			this.buttonCliente_Pagina2.Location = new System.Drawing.Point(391, 367);
+			this.buttonCliente_Pagina2.Margin = new System.Windows.Forms.Padding(2);
+			this.buttonCliente_Pagina2.Name = "buttonCliente_Pagina2";
+			this.buttonCliente_Pagina2.Size = new System.Drawing.Size(77, 27);
+			this.buttonCliente_Pagina2.TabIndex = 11;
+			this.buttonCliente_Pagina2.UseVisualStyleBackColor = false;
+			this.buttonCliente_Pagina2.Click += new System.EventHandler(this.buttonCliente_Pagina2_Click);
+			// 
+			// buttonCliente_Pagina3
+			// 
+			this.buttonCliente_Pagina3.BackColor = System.Drawing.SystemColors.GrayText;
+			this.buttonCliente_Pagina3.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.buttonCliente_Pagina3.FlatAppearance.BorderSize = 0;
+			this.buttonCliente_Pagina3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonCliente_Pagina3.Image = global::Sistema_punto_de_ventas.Properties.Resources.Right;
+			this.buttonCliente_Pagina3.Location = new System.Drawing.Point(482, 366);
+			this.buttonCliente_Pagina3.Margin = new System.Windows.Forms.Padding(2);
+			this.buttonCliente_Pagina3.Name = "buttonCliente_Pagina3";
+			this.buttonCliente_Pagina3.Size = new System.Drawing.Size(77, 27);
+			this.buttonCliente_Pagina3.TabIndex = 10;
+			this.buttonCliente_Pagina3.UseVisualStyleBackColor = false;
+			this.buttonCliente_Pagina3.Click += new System.EventHandler(this.buttonCliente_Pagina3_Click);
+			// 
+			// buttonCliente_Pagina4
+			// 
+			this.buttonCliente_Pagina4.BackColor = System.Drawing.SystemColors.GrayText;
+			this.buttonCliente_Pagina4.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.buttonCliente_Pagina4.FlatAppearance.BorderSize = 0;
+			this.buttonCliente_Pagina4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonCliente_Pagina4.Image = global::Sistema_punto_de_ventas.Properties.Resources.Right_1;
+			this.buttonCliente_Pagina4.Location = new System.Drawing.Point(572, 366);
+			this.buttonCliente_Pagina4.Margin = new System.Windows.Forms.Padding(2);
+			this.buttonCliente_Pagina4.Name = "buttonCliente_Pagina4";
+			this.buttonCliente_Pagina4.Size = new System.Drawing.Size(77, 27);
+			this.buttonCliente_Pagina4.TabIndex = 9;
+			this.buttonCliente_Pagina4.UseVisualStyleBackColor = false;
+			this.buttonCliente_Pagina4.Click += new System.EventHandler(this.buttonCliente_Pagina4_Click);
+			// 
+			// button2
+			// 
+			this.button2.BackColor = System.Drawing.SystemColors.GrayText;
+			this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.button2.FlatAppearance.BorderSize = 0;
+			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button2.Image = global::Sistema_punto_de_ventas.Properties.Resources.people;
+			this.button2.Location = new System.Drawing.Point(663, 365);
+			this.button2.Margin = new System.Windows.Forms.Padding(2);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(77, 27);
+			this.button2.TabIndex = 8;
+			this.button2.UseVisualStyleBackColor = false;
+			// 
+			// buttonCliente_Pagina1
+			// 
+			this.buttonCliente_Pagina1.BackColor = System.Drawing.SystemColors.GrayText;
+			this.buttonCliente_Pagina1.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.buttonCliente_Pagina1.FlatAppearance.BorderSize = 0;
+			this.buttonCliente_Pagina1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonCliente_Pagina1.Image = global::Sistema_punto_de_ventas.Properties.Resources.Left_1;
+			this.buttonCliente_Pagina1.Location = new System.Drawing.Point(299, 368);
+			this.buttonCliente_Pagina1.Margin = new System.Windows.Forms.Padding(2);
+			this.buttonCliente_Pagina1.Name = "buttonCliente_Pagina1";
+			this.buttonCliente_Pagina1.Size = new System.Drawing.Size(77, 27);
+			this.buttonCliente_Pagina1.TabIndex = 7;
+			this.buttonCliente_Pagina1.UseVisualStyleBackColor = false;
+			this.buttonCliente_Pagina1.Click += new System.EventHandler(this.buttonCliente_Pagina1_Click);
+			// 
+			// numeric_PaginasCliente
+			// 
+			this.numeric_PaginasCliente.Location = new System.Drawing.Point(8, 368);
+			this.numeric_PaginasCliente.Name = "numeric_PaginasCliente";
+			this.numeric_PaginasCliente.Size = new System.Drawing.Size(120, 20);
+			this.numeric_PaginasCliente.TabIndex = 6;
+			this.numeric_PaginasCliente.Value = new decimal(new int[] {
+            11,
+            0,
+            0,
+            0});
+			this.numeric_PaginasCliente.ValueChanged += new System.EventHandler(this.numeric_PaginasCliente_ValueChanged);
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.ForeColor = System.Drawing.Color.LightSlateGray;
+			this.label5.Location = new System.Drawing.Point(6, 351);
+			this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(92, 13);
+			this.label5.TabIndex = 5;
+			this.label5.Text = "Registros Paginas";
+			// 
+			// tabControl1
+			// 
+			this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.tabControl1.Controls.Add(this.tabPage5);
+			this.tabControl1.Controls.Add(this.tabPage6);
+			this.tabControl1.Location = new System.Drawing.Point(5, 11);
+			this.tabControl1.Name = "tabControl1";
+			this.tabControl1.SelectedIndex = 0;
+			this.tabControl1.Size = new System.Drawing.Size(835, 337);
+			this.tabControl1.TabIndex = 1;
+			// 
+			// tabPage5
+			// 
+			this.tabPage5.Controls.Add(this.dataGridView_Clientes);
+			this.tabPage5.Location = new System.Drawing.Point(4, 22);
+			this.tabPage5.Name = "tabPage5";
+			this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage5.Size = new System.Drawing.Size(827, 311);
+			this.tabPage5.TabIndex = 0;
+			this.tabPage5.Text = "Listado Clientes";
+			this.tabPage5.UseVisualStyleBackColor = true;
+			// 
 			// dataGridView_Clientes
 			// 
 			this.dataGridView_Clientes.AllowUserToAddRows = false;
@@ -141,30 +299,42 @@
 			this.dataGridView_Clientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.dataGridView_Clientes.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dataGridView_Clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dataGridView_Clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
 			this.dataGridView_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView_Clientes.GridColor = System.Drawing.SystemColors.Control;
-			this.dataGridView_Clientes.Location = new System.Drawing.Point(5, 11);
+			this.dataGridView_Clientes.Location = new System.Drawing.Point(6, 20);
 			this.dataGridView_Clientes.Name = "dataGridView_Clientes";
 			this.dataGridView_Clientes.ReadOnly = true;
 			this.dataGridView_Clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dataGridView_Clientes.Size = new System.Drawing.Size(835, 322);
+			this.dataGridView_Clientes.Size = new System.Drawing.Size(815, 280);
 			this.dataGridView_Clientes.TabIndex = 0;
 			this.dataGridView_Clientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Clientes_CellClick);
 			this.dataGridView_Clientes.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridView_Clientes_KeyUp);
+			// 
+			// tabPage6
+			// 
+			this.tabPage6.Location = new System.Drawing.Point(4, 22);
+			this.tabPage6.Name = "tabPage6";
+			this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage6.Size = new System.Drawing.Size(827, 311);
+			this.tabPage6.TabIndex = 1;
+			this.tabPage6.Text = "Pagos y Reportes";
+			this.tabPage6.UseVisualStyleBackColor = true;
 			// 
 			// groupBox3
 			// 
 			this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
 			this.groupBox3.Controls.Add(this.tabControl2);
+			this.groupBox3.Controls.Add(this.buttonCliente_Cancelar);
+			this.groupBox3.Controls.Add(this.buttonCliente_Agregar);
 			this.groupBox3.Location = new System.Drawing.Point(4, 60);
 			this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
 			this.groupBox3.Name = "groupBox3";
@@ -181,14 +351,12 @@
 			this.tabControl2.Margin = new System.Windows.Forms.Padding(2);
 			this.tabControl2.Name = "tabControl2";
 			this.tabControl2.SelectedIndex = 0;
-			this.tabControl2.Size = new System.Drawing.Size(295, 395);
+			this.tabControl2.Size = new System.Drawing.Size(295, 337);
 			this.tabControl2.TabIndex = 0;
 			// 
 			// tabPage3
 			// 
 			this.tabPage3.Controls.Add(this.checkBoxCliente_Credito);
-			this.tabPage3.Controls.Add(this.buttonCliente_Cancelar);
-			this.tabPage3.Controls.Add(this.buttonCliente_Agregar);
 			this.tabPage3.Controls.Add(this.textBoxCliente_Direccion);
 			this.tabPage3.Controls.Add(this.labelCliente_Direccion);
 			this.tabPage3.Controls.Add(this.textBoxCliente_Telefono);
@@ -207,7 +375,7 @@
 			this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
 			this.tabPage3.Name = "tabPage3";
 			this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
-			this.tabPage3.Size = new System.Drawing.Size(287, 369);
+			this.tabPage3.Size = new System.Drawing.Size(287, 311);
 			this.tabPage3.TabIndex = 0;
 			this.tabPage3.Text = "Registros de cliente";
 			this.tabPage3.UseVisualStyleBackColor = true;
@@ -221,36 +389,6 @@
 			this.checkBoxCliente_Credito.TabIndex = 16;
 			this.checkBoxCliente_Credito.Text = "Credito";
 			this.checkBoxCliente_Credito.UseVisualStyleBackColor = true;
-			// 
-			// buttonCliente_Cancelar
-			// 
-			this.buttonCliente_Cancelar.BackColor = System.Drawing.SystemColors.GrayText;
-			this.buttonCliente_Cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.buttonCliente_Cancelar.FlatAppearance.BorderSize = 0;
-			this.buttonCliente_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.buttonCliente_Cancelar.Image = global::Sistema_punto_de_ventas.Properties.Resources.Cancelar;
-			this.buttonCliente_Cancelar.Location = new System.Drawing.Point(146, 327);
-			this.buttonCliente_Cancelar.Margin = new System.Windows.Forms.Padding(2);
-			this.buttonCliente_Cancelar.Name = "buttonCliente_Cancelar";
-			this.buttonCliente_Cancelar.Size = new System.Drawing.Size(81, 31);
-			this.buttonCliente_Cancelar.TabIndex = 15;
-			this.buttonCliente_Cancelar.UseVisualStyleBackColor = false;
-			this.buttonCliente_Cancelar.Click += new System.EventHandler(this.ButtonCliente_Cancelar_Click);
-			// 
-			// buttonCliente_Agregar
-			// 
-			this.buttonCliente_Agregar.BackColor = System.Drawing.SystemColors.GrayText;
-			this.buttonCliente_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.buttonCliente_Agregar.FlatAppearance.BorderSize = 0;
-			this.buttonCliente_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.buttonCliente_Agregar.Image = global::Sistema_punto_de_ventas.Properties.Resources.Agregar;
-			this.buttonCliente_Agregar.Location = new System.Drawing.Point(55, 327);
-			this.buttonCliente_Agregar.Margin = new System.Windows.Forms.Padding(2);
-			this.buttonCliente_Agregar.Name = "buttonCliente_Agregar";
-			this.buttonCliente_Agregar.Size = new System.Drawing.Size(81, 31);
-			this.buttonCliente_Agregar.TabIndex = 14;
-			this.buttonCliente_Agregar.UseVisualStyleBackColor = false;
-			this.buttonCliente_Agregar.Click += new System.EventHandler(this.ButtonCliente_Agregar_Click);
 			// 
 			// textBoxCliente_Direccion
 			// 
@@ -425,10 +563,40 @@
 			this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
 			this.tabPage4.Name = "tabPage4";
 			this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
-			this.tabPage4.Size = new System.Drawing.Size(287, 369);
+			this.tabPage4.Size = new System.Drawing.Size(287, 311);
 			this.tabPage4.TabIndex = 1;
-			this.tabPage4.Text = "Pago";
+			this.tabPage4.Text = "Pago y Reportes";
 			this.tabPage4.UseVisualStyleBackColor = true;
+			// 
+			// buttonCliente_Cancelar
+			// 
+			this.buttonCliente_Cancelar.BackColor = System.Drawing.SystemColors.GrayText;
+			this.buttonCliente_Cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.buttonCliente_Cancelar.FlatAppearance.BorderSize = 0;
+			this.buttonCliente_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonCliente_Cancelar.Image = global::Sistema_punto_de_ventas.Properties.Resources.Cancelar;
+			this.buttonCliente_Cancelar.Location = new System.Drawing.Point(152, 364);
+			this.buttonCliente_Cancelar.Margin = new System.Windows.Forms.Padding(2);
+			this.buttonCliente_Cancelar.Name = "buttonCliente_Cancelar";
+			this.buttonCliente_Cancelar.Size = new System.Drawing.Size(81, 31);
+			this.buttonCliente_Cancelar.TabIndex = 15;
+			this.buttonCliente_Cancelar.UseVisualStyleBackColor = false;
+			this.buttonCliente_Cancelar.Click += new System.EventHandler(this.ButtonCliente_Cancelar_Click);
+			// 
+			// buttonCliente_Agregar
+			// 
+			this.buttonCliente_Agregar.BackColor = System.Drawing.SystemColors.GrayText;
+			this.buttonCliente_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.buttonCliente_Agregar.FlatAppearance.BorderSize = 0;
+			this.buttonCliente_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonCliente_Agregar.Image = global::Sistema_punto_de_ventas.Properties.Resources.Agregar;
+			this.buttonCliente_Agregar.Location = new System.Drawing.Point(52, 364);
+			this.buttonCliente_Agregar.Margin = new System.Windows.Forms.Padding(2);
+			this.buttonCliente_Agregar.Name = "buttonCliente_Agregar";
+			this.buttonCliente_Agregar.Size = new System.Drawing.Size(81, 31);
+			this.buttonCliente_Agregar.TabIndex = 14;
+			this.buttonCliente_Agregar.UseVisualStyleBackColor = false;
+			this.buttonCliente_Agregar.Click += new System.EventHandler(this.ButtonCliente_Agregar_Click);
 			// 
 			// groupBox2
 			// 
@@ -551,6 +719,10 @@
 			this.tabControlPrincipal.ResumeLayout(false);
 			this.tabPage2.ResumeLayout(false);
 			this.groupBox5.ResumeLayout(false);
+			this.groupBox5.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numeric_PaginasCliente)).EndInit();
+			this.tabControl1.ResumeLayout(false);
+			this.tabPage5.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clientes)).EndInit();
 			this.groupBox3.ResumeLayout(false);
 			this.tabControl2.ResumeLayout(false);
@@ -603,6 +775,17 @@
         private System.Windows.Forms.TextBox textBoxCliente_Nid;
 		private System.Windows.Forms.CheckBox checkBoxCliente_Credito;
 		private System.Windows.Forms.DataGridView dataGridView_Clientes;
+		private System.Windows.Forms.TabControl tabControl1;
+		private System.Windows.Forms.TabPage tabPage5;
+		private System.Windows.Forms.TabPage tabPage6;
+		private System.Windows.Forms.NumericUpDown numeric_PaginasCliente;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label_PaginasCliente;
+		private System.Windows.Forms.Button buttonCliente_Pagina2;
+		private System.Windows.Forms.Button buttonCliente_Pagina3;
+		private System.Windows.Forms.Button buttonCliente_Pagina4;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button buttonCliente_Pagina1;
 	}
 }
 
