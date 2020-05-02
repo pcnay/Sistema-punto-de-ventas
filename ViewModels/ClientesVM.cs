@@ -24,6 +24,8 @@ namespace ViewModels
 		private static DataGridView _dataGridView1;
 		private int _reg_por_pagina = 10, _num_pagina = 1;
 
+
+
 		public ClientesVM(object[] objectos, List<TextBox> textBoxCliente, List<Label> labelCliente)
 		{
 			_textBoxCliente = textBoxCliente;
@@ -209,12 +211,52 @@ namespace ViewModels
 			{
 				query = await TClientes.Where(c => c.Nid.StartsWith(campo) || c.Nombre.StartsWith(campo) || c.Apellido.StartsWith(campo)).ToListAsync();
 			}
+			// En esta parte se asigna los datos al Grid de la pantalla en Captura de Clientes.
 			_dataGridView1.DataSource = query.Skip(inicio).Take(_reg_por_pagina).ToList();
+			// Ocultando algunas columnas.
+			_dataGridView1.Columns[0].Visible = false;
+			_dataGridView1.Columns[7].Visible = false;
+			_dataGridView1.Columns[9].Visible = false;
+			_dataGridView1.Columns[1].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+			_dataGridView1.Columns[3].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+			_dataGridView1.Columns[5].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+			_dataGridView1.Columns[7].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+
 		}
+
+		// Asigna los valores a los campos de captura de Clientes.
+		private int _idCliente = 0;
+		public void GetCliente()
+		{
+			_accion = "update";
+			_idCliente = Convert.ToInt16(_dataGridView1.CurrentRow.Cells[0].Value);
+			_textBoxCliente[0].Text = Convert.ToString(_dataGridView1.CurrentRow.Cells[1].Value);
+			_textBoxCliente[1].Text = Convert.ToString(_dataGridView1.CurrentRow.Cells[2].Value);
+			_textBoxCliente[2].Text = Convert.ToString(_dataGridView1.CurrentRow.Cells[3].Value);
+			_textBoxCliente[3].Text = Convert.ToString(_dataGridView1.CurrentRow.Cells[4].Value);
+			_textBoxCliente[4].Text = Convert.ToString(_dataGridView1.CurrentRow.Cells[6].Value);
+			_textBoxCliente[5].Text = Convert.ToString(_dataGridView1.CurrentRow.Cells[5].Value);
+
+			try
+			{
+				// Para obtener la imagen.
+				byte[] arrayImage = (byte[])_dataGridView1.CurrentRow.Cells[9].Value;
+				//_imagePictureBox.Image = Objects.uploadimage.byteArrayToImage(arrayImage);
+			}
+			catch (Exception)
+			{
+				_imagePictureBox.Image = _imagBitmap;
+			}
+						
+			_checkBoxCredito.Checked = Convert.ToBoolean(_dataGridView1.CurrentRow.Cells[8].Value);
+			_checkBoxCredito.ForeColor = _checkBoxCredito.Checked ? Color.Green : Color.Red;
+		}
+
 		public void restablecer()
 		{
 			_accion = "insert";
 			_num_pagina = 1;
+			_imagePictureBox.Image = _imagBitmap;
 			_textBoxCliente[0].Text = "";
 			_textBoxCliente[1].Text = "";
 			_textBoxCliente[2].Text = "";

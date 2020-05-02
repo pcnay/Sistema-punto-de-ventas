@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tabControlPrincipal = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
+			this.dataGridView_Clientes = new System.Windows.Forms.DataGridView();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.tabControl2 = new System.Windows.Forms.TabControl();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -62,10 +64,10 @@
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.buttonCliente = new System.Windows.Forms.Button();
-			this.dataGridView_Clientes = new System.Windows.Forms.DataGridView();
 			this.tabControlPrincipal.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			this.groupBox5.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clientes)).BeginInit();
 			this.groupBox3.SuspendLayout();
 			this.tabControl2.SuspendLayout();
 			this.tabPage3.SuspendLayout();
@@ -74,7 +76,6 @@
 			this.groupBox2.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clientes)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tabControlPrincipal
@@ -132,6 +133,32 @@
 			this.groupBox5.Size = new System.Drawing.Size(845, 554);
 			this.groupBox5.TabIndex = 2;
 			this.groupBox5.TabStop = false;
+			// 
+			// dataGridView_Clientes
+			// 
+			this.dataGridView_Clientes.AllowUserToAddRows = false;
+			this.dataGridView_Clientes.AllowUserToDeleteRows = false;
+			this.dataGridView_Clientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.dataGridView_Clientes.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dataGridView_Clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			this.dataGridView_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView_Clientes.GridColor = System.Drawing.SystemColors.Control;
+			this.dataGridView_Clientes.Location = new System.Drawing.Point(5, 11);
+			this.dataGridView_Clientes.Name = "dataGridView_Clientes";
+			this.dataGridView_Clientes.ReadOnly = true;
+			this.dataGridView_Clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dataGridView_Clientes.Size = new System.Drawing.Size(835, 322);
+			this.dataGridView_Clientes.TabIndex = 0;
+			this.dataGridView_Clientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Clientes_CellClick);
+			this.dataGridView_Clientes.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridView_Clientes_KeyUp);
 			// 
 			// groupBox3
 			// 
@@ -505,21 +532,6 @@
 			this.buttonCliente.UseVisualStyleBackColor = false;
 			this.buttonCliente.Click += new System.EventHandler(this.ButtonCliente_Click);
 			// 
-			// dataGridView_Clientes
-			// 
-			this.dataGridView_Clientes.AllowUserToAddRows = false;
-			this.dataGridView_Clientes.AllowUserToDeleteRows = false;
-			this.dataGridView_Clientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.dataGridView_Clientes.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.dataGridView_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView_Clientes.GridColor = System.Drawing.SystemColors.Control;
-			this.dataGridView_Clientes.Location = new System.Drawing.Point(5, 11);
-			this.dataGridView_Clientes.Name = "dataGridView_Clientes";
-			this.dataGridView_Clientes.ReadOnly = true;
-			this.dataGridView_Clientes.Size = new System.Drawing.Size(835, 322);
-			this.dataGridView_Clientes.TabIndex = 0;
-			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -539,6 +551,7 @@
 			this.tabControlPrincipal.ResumeLayout(false);
 			this.tabPage2.ResumeLayout(false);
 			this.groupBox5.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clientes)).EndInit();
 			this.groupBox3.ResumeLayout(false);
 			this.tabControl2.ResumeLayout(false);
 			this.tabPage3.ResumeLayout(false);
@@ -550,7 +563,6 @@
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clientes)).EndInit();
 			this.ResumeLayout(false);
 
         }

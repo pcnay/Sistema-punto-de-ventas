@@ -164,16 +164,37 @@ namespace Sistema_punto_de_ventas
 
         private void ButtonCliente_Cancelar_Click(object sender, EventArgs e)
         {
-
+          clientes.restablecer();
         }
 
+        private void dataGridView_Clientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+          // Cuando se realiza un click en el celda del DataGrid
+          // Determina si tiene datos el DAtaGrid
+          if (dataGridView_Clientes.Rows.Count != 0)
+          {
+            clientes.GetCliente();
+          }
+        }
 
+        private void dataGridView_Clientes_KeyUp(object sender, KeyEventArgs e)
+        {
+          // Cuando se realiza cuando se desplaza la tecla flecha arriba
+          // Determina si tiene datos el DAtaGrid
+          if (dataGridView_Clientes.Rows.Count != 0)
+            {
+              clientes.GetCliente();
+            }
+        }
 
     #endregion
 
-    private void Form1_Load(object sender, EventArgs e)
-    {
+    
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
-    }
+        }
+    
+
   }
 }
