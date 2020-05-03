@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tabControlPrincipal = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -41,12 +41,12 @@
 			this.buttonCliente_Pagina1 = new System.Windows.Forms.Button();
 			this.numeric_PaginasCliente = new System.Windows.Forms.NumericUpDown();
 			this.label5 = new System.Windows.Forms.Label();
-			this.tabControl1 = new System.Windows.Forms.TabControl();
+			this.tabControlCliente2 = new System.Windows.Forms.TabControl();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
 			this.dataGridView_Clientes = new System.Windows.Forms.DataGridView();
 			this.tabPage6 = new System.Windows.Forms.TabPage();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
-			this.tabControl2 = new System.Windows.Forms.TabControl();
+			this.tabControlCliente1 = new System.Windows.Forms.TabControl();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.checkBoxCliente_Credito = new System.Windows.Forms.CheckBox();
 			this.textBoxCliente_Direccion = new System.Windows.Forms.TextBox();
@@ -79,11 +79,11 @@
 			this.tabPage2.SuspendLayout();
 			this.groupBox5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numeric_PaginasCliente)).BeginInit();
-			this.tabControl1.SuspendLayout();
+			this.tabControlCliente2.SuspendLayout();
 			this.tabPage5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clientes)).BeginInit();
 			this.groupBox3.SuspendLayout();
-			this.tabControl2.SuspendLayout();
+			this.tabControlCliente1.SuspendLayout();
 			this.tabPage3.SuspendLayout();
 			this.groupBox4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.PictureBoxCliente)).BeginInit();
@@ -147,7 +147,7 @@
 			this.groupBox5.Controls.Add(this.buttonCliente_Pagina1);
 			this.groupBox5.Controls.Add(this.numeric_PaginasCliente);
 			this.groupBox5.Controls.Add(this.label5);
-			this.groupBox5.Controls.Add(this.tabControl1);
+			this.groupBox5.Controls.Add(this.tabControlCliente2);
 			this.groupBox5.Location = new System.Drawing.Point(313, 60);
 			this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
 			this.groupBox5.Name = "groupBox5";
@@ -268,18 +268,19 @@
 			this.label5.TabIndex = 5;
 			this.label5.Text = "Registros Paginas";
 			// 
-			// tabControl1
+			// tabControlCliente2
 			// 
-			this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.tabControlCliente2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.tabControl1.Controls.Add(this.tabPage5);
-			this.tabControl1.Controls.Add(this.tabPage6);
-			this.tabControl1.Location = new System.Drawing.Point(5, 11);
-			this.tabControl1.Name = "tabControl1";
-			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(835, 337);
-			this.tabControl1.TabIndex = 1;
+			this.tabControlCliente2.Controls.Add(this.tabPage5);
+			this.tabControlCliente2.Controls.Add(this.tabPage6);
+			this.tabControlCliente2.Location = new System.Drawing.Point(5, 11);
+			this.tabControlCliente2.Name = "tabControlCliente2";
+			this.tabControlCliente2.SelectedIndex = 0;
+			this.tabControlCliente2.Size = new System.Drawing.Size(835, 337);
+			this.tabControlCliente2.TabIndex = 1;
+			this.tabControlCliente2.SelectedIndexChanged += new System.EventHandler(this.tabControlCliente2_SelectedIndexChanged);
 			// 
 			// tabPage5
 			// 
@@ -299,14 +300,14 @@
 			this.dataGridView_Clientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.dataGridView_Clientes.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-			dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dataGridView_Clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dataGridView_Clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
 			this.dataGridView_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView_Clientes.GridColor = System.Drawing.SystemColors.Control;
 			this.dataGridView_Clientes.Location = new System.Drawing.Point(6, 20);
@@ -332,7 +333,7 @@
 			// 
 			this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-			this.groupBox3.Controls.Add(this.tabControl2);
+			this.groupBox3.Controls.Add(this.tabControlCliente1);
 			this.groupBox3.Controls.Add(this.buttonCliente_Cancelar);
 			this.groupBox3.Controls.Add(this.buttonCliente_Agregar);
 			this.groupBox3.Location = new System.Drawing.Point(4, 60);
@@ -343,16 +344,17 @@
 			this.groupBox3.TabIndex = 1;
 			this.groupBox3.TabStop = false;
 			// 
-			// tabControl2
+			// tabControlCliente1
 			// 
-			this.tabControl2.Controls.Add(this.tabPage3);
-			this.tabControl2.Controls.Add(this.tabPage4);
-			this.tabControl2.Location = new System.Drawing.Point(5, 11);
-			this.tabControl2.Margin = new System.Windows.Forms.Padding(2);
-			this.tabControl2.Name = "tabControl2";
-			this.tabControl2.SelectedIndex = 0;
-			this.tabControl2.Size = new System.Drawing.Size(295, 337);
-			this.tabControl2.TabIndex = 0;
+			this.tabControlCliente1.Controls.Add(this.tabPage3);
+			this.tabControlCliente1.Controls.Add(this.tabPage4);
+			this.tabControlCliente1.Location = new System.Drawing.Point(5, 11);
+			this.tabControlCliente1.Margin = new System.Windows.Forms.Padding(2);
+			this.tabControlCliente1.Name = "tabControlCliente1";
+			this.tabControlCliente1.SelectedIndex = 0;
+			this.tabControlCliente1.Size = new System.Drawing.Size(295, 337);
+			this.tabControlCliente1.TabIndex = 0;
+			this.tabControlCliente1.SelectedIndexChanged += new System.EventHandler(this.tabControlCliente1_SelectedIndexChanged);
 			// 
 			// tabPage3
 			// 
@@ -621,6 +623,7 @@
 			this.textBoxCliente_Buscar.Name = "textBoxCliente_Buscar";
 			this.textBoxCliente_Buscar.Size = new System.Drawing.Size(198, 25);
 			this.textBoxCliente_Buscar.TabIndex = 2;
+			this.textBoxCliente_Buscar.TextChanged += new System.EventHandler(this.textBoxCliente_Buscar_TextChanged);
 			// 
 			// label3
 			// 
@@ -721,11 +724,11 @@
 			this.groupBox5.ResumeLayout(false);
 			this.groupBox5.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numeric_PaginasCliente)).EndInit();
-			this.tabControl1.ResumeLayout(false);
+			this.tabControlCliente2.ResumeLayout(false);
 			this.tabPage5.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clientes)).EndInit();
 			this.groupBox3.ResumeLayout(false);
-			this.tabControl2.ResumeLayout(false);
+			this.tabControlCliente1.ResumeLayout(false);
 			this.tabPage3.ResumeLayout(false);
 			this.tabPage3.PerformLayout();
 			this.groupBox4.ResumeLayout(false);
@@ -748,7 +751,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabControl tabControlCliente1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -775,7 +778,7 @@
         private System.Windows.Forms.TextBox textBoxCliente_Nid;
 		private System.Windows.Forms.CheckBox checkBoxCliente_Credito;
 		private System.Windows.Forms.DataGridView dataGridView_Clientes;
-		private System.Windows.Forms.TabControl tabControl1;
+		private System.Windows.Forms.TabControl tabControlCliente2;
 		private System.Windows.Forms.TabPage tabPage5;
 		private System.Windows.Forms.TabPage tabPage6;
 		private System.Windows.Forms.NumericUpDown numeric_PaginasCliente;

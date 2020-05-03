@@ -123,6 +123,76 @@ namespace ViewModels
 													}
 												}
 												break;
+												case "update":
+													if (list.Count.Equals(2))
+													{
+														if (cliente1[0].ID.Equals(_idCliente) && cliente2[0].ID.Equals(_idCliente))
+														{
+															SaveData();
+														}
+														else
+														{
+															if (cliente1[0].ID != _idCliente)
+															{
+																_labelCliente[0].Text = "El NID ya esta registrado";
+																_labelCliente[0].ForeColor = Color.Red;
+																_textBoxCliente[0].Focus();
+															}
+															if (cliente2[0].ID != _idCliente)
+															{
+																_labelCliente[3].Text = "El Email ya esta registrado";
+																_labelCliente[3].ForeColor = Color.Red;
+																_textBoxCliente[3].Focus();
+															}
+														}
+													}
+													else
+													{
+														if (list.Count.Equals(0)) // ID y Email no esta registrado.
+														{
+															SaveData();
+														}
+														else
+														{
+															if (0 != cliente1.Count) // No. de ID registrado.
+															{
+																if(cliente1[0].ID.Equals(_idCliente))
+																{
+																	SaveData();
+																}
+																else
+																{
+																	if (cliente1[0].ID != _idCliente)
+																	{
+																		_labelCliente[0].Text = "El NID ya esta registrado";
+																		_labelCliente[0].ForeColor = Color.Red;
+																		_textBoxCliente[0].Focus();
+																	}
+
+																}
+
+
+															} // if (0 != cliente1.Count) // No. de ID registrado.
+															if (0 != cliente2.Count) // Email Registrado.
+															{
+																if (cliente2[0].ID.Equals(_idCliente))
+																{
+																	SaveData();
+																}
+																else
+																{
+																	if (cliente2[0].ID != _idCliente)
+																	{
+																		_labelCliente[0].Text = "El NID ya esta registrado";
+																		_labelCliente[0].ForeColor = Color.Red;
+																		_textBoxCliente[0].Focus();
+																	}
+																}
+															}
+
+														}
+													}
+												break;
 										}
 
 									}
@@ -174,9 +244,22 @@ namespace ViewModels
 										.Value(u => u.Ticket, "0000000000")
 										.Value(u => u.IdCliente, cliente.ID)
 										.Insert();
-						break;
-
+							break;
+						case "update":
+							// Permite realizar una consulta
+							TClientes.Where(u => u.ID.Equals(_idCliente))
+								.Set (u => u.Nid, _textBoxCliente[0].Text)
+								.Set(u => u.Nombre, _textBoxCliente[1].Text)
+								.Set(u => u.Apellido, _textBoxCliente[2].Text)
+								.Set(u => u.Email, _textBoxCliente[3].Text)
+								.Set(u => u.Telefono, _textBoxCliente[4].Text)
+								.Set(u => u.Direccion, _textBoxCliente[5].Text)
+								.Set(u => u.Credito, _checkBoxCredito.Checked)
+								.Set(u => u.Imagen, image)
+								.Update();
+							break;
 				}
+
 				CommitTransaction(); // Para grabar los datos a las Tablas.
 				restablecer();
 			}
