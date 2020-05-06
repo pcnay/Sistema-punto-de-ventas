@@ -10,7 +10,8 @@ namespace Models
     public class TReportes_clientes
     {
         [PrimaryKey, Identity]
-        public int IdReport { set; get; }
+        public int IdReportes { set; get; }
+        // EXEC sp_rename 'TReportes_clientes.IdRegistro','IdReportes','COLUMN';
         public decimal UltimoPago { set; get; }
         public string FechaPago { set; get; }
         public decimal DeudaActual { set; get; }

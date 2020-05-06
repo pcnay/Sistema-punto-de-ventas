@@ -41,6 +41,8 @@ namespace ViewModels
 			evento = new TextBoxEvent();
 			restablecer();
 		}
+		// Registros De Clientes.
+		#region
 		public void guardarCliente()
 		{
 			if (_textBoxCliente[0].Text.Equals(""))
@@ -387,6 +389,22 @@ namespace ViewModels
 				_paginadorClientes = new Paginador<TClientes>(listCliente, _labelCliente[6], _reg_por_pagina);
 			}			
 		}
+
+		#endregion
+		// Pagos y Reportes
+		#region
+			public void GetReportes(String valor)
+			{
+				int inicio = (_num_pagina - 1) * _reg_por_pagina;
+				if (valor.Equals(""))
+				{
+					// Se obtiene la información de las tablas que estan relacionadas.
+					var query = TClientes.Join(TReportes_clientes, c=> c.ID, t=>t.IdCliente,(c,t)=>new{ c.ID,c.Nid,c.Apellido,t.IdReportes,t.DeudaActual,
+					t.FechaDeuda,t.UltimoPago,t.FechaPago,t.Ticket,t.FechaLimite}).ToList();
+
+				}
+			}
+		#endregion
 
 		private List<TClientes> listCliente;
 		public void Paginador (string metodo)
